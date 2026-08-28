@@ -1,0 +1,41 @@
+---
+interface Props {
+  heading?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  heading = "Pronto para levar sua empresa ao próximo nível com a Liberty?",
+  ctaLabel = "Vamos conversar",
+  ctaHref = "/contato/",
+} = Astro.props;
+---
+
+<section class="final-cta">
+  <div class="container">
+    <h2 data-reveal>{heading}</h2>
+    <a href={ctaHref} class="btn btn--primary" data-reveal style="--reveal-delay: 0.1s">{ctaLabel}</a>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    background: linear-gradient(155deg, var(--color-navy-deep) 0%, var(--color-blue) 130%);
+    color: var(--color-white);
+    text-align: center;
+    padding: 72px 24px;
+  }
+
+  .final-cta h2 {
+    color: var(--color-white);
+    max-width: 620px;
+    margin: 0 auto 28px;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  .final-cta .btn--primary {
+    background: var(--color-white);
+    color: var(--color-blue);
+  }
+</style>

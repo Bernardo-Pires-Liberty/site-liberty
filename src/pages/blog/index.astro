@@ -1,0 +1,206 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+
+// Hoje há apenas 1 artigo publicado — cada novo post entra neste array.
+const posts = [
+  {
+    category: "Data Center",
+    date: "2025-09-29",
+    dateLabel: "29 de setembro de 2025",
+    title: "Data Centers e Armazenamento de Energia: pilares da modernização da infraestrutura no Brasil",
+    excerpt:
+      "O avanço da digitalização, da computação em nuvem e da inteligência artificial tem impulsionado globalmente a demanda por data centers, transformando a infraestrutura civil e energética do país.",
+    href: "/blog/data-centers-armazenamento-energia/",
+  },
+];
+---
+
+<Layout
+  title="Blog"
+  description="Artigos, análises e insights da Liberty Negócios sobre M&A, gestão, finanças e estratégia empresarial."
+>
+  <PageHero
+    title="Conteúdo que impulsiona decisões estratégicas"
+    subtitle="Aqui você encontra artigos, análises e insights sobre gestão, finanças, estratégia empresarial, mercado e muito mais."
+  />
+
+  <section class="section">
+    <div class="container layout">
+      <div class="posts" data-reveal>
+        {posts.map((post) => (
+          <article class="post-card hover-lift">
+            <div class="post-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="7" rx="1.5" />
+                <rect x="3" y="14" width="18" height="7" rx="1.5" />
+                <path d="M7 6.5h.01M7 17.5h.01" />
+              </svg>
+            </div>
+            <p class="post-card__category">{post.category}</p>
+            <time class="post-card__date" datetime={post.date}>{post.dateLabel}</time>
+            <h2><a href={post.href}>{post.title}</a></h2>
+            <p class="post-card__excerpt">{post.excerpt}</p>
+            <a href={post.href} class="btn btn--ghost">Leia Agora <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+
+      <aside class="sidebar" data-reveal style="--reveal-delay: 0.15s">
+        <form class="search" role="search" onsubmit="return false">
+          <label for="blog-search" class="visually-hidden">Buscar artigos</label>
+          <input id="blog-search" type="search" placeholder="O que você está procurando?" />
+          <button type="submit" aria-label="Buscar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </button>
+        </form>
+
+        <h2 class="sidebar__title">Artigos recentes</h2>
+        <ul class="sidebar__list">
+          {posts.map((post) => (
+            <li>
+              <p class="sidebar__meta">{post.category} · {post.dateLabel}</p>
+              <a href={post.href}>{post.title}</a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .post-card {
+    background: var(--color-bg-soft);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .post-card__visual {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background: var(--color-navy);
+    color: #9dc0f7;
+    margin-bottom: 20px;
+  }
+
+  .post-card__category {
+    display: inline-block;
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+
+  .post-card__date {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .post-card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
+
+  .post-card h2 a:hover {
+    color: var(--color-blue);
+  }
+
+  .post-card__excerpt {
+    font-size: 0.95rem;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg-soft);
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
+    margin-bottom: 40px;
+  }
+
+  .search input {
+    flex: 1;
+    border: none;
+    background: none;
+    font: inherit;
+    color: var(--color-navy);
+    outline: none;
+  }
+
+  .search button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-blue);
+    color: var(--color-white);
+    cursor: pointer;
+  }
+
+  .sidebar__title {
+    font-size: 1.1rem;
+    color: var(--color-blue);
+    margin-bottom: 20px;
+  }
+
+  .sidebar__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sidebar__list li {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(40, 48, 71, 0.08);
+    font-size: 0.9rem;
+  }
+
+  .sidebar__meta {
+    font-size: 0.78rem;
+    color: var(--color-blue);
+    margin: 0 0 4px;
+  }
+
+  .sidebar__list a:hover {
+    color: var(--color-blue);
+  }
+
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+// "O que defendemos?" — reused as-is on Home, Quem Somos and other pages.
+const reasons = [
+  {
+    title: "Confiança reconhecida pelo mercado",
+    desc: "A confiança no trabalho da Liberty tem sido conquistada por meio de uma atuação sólida e comprometida, sendo reconhecida por clientes e parceiros em diversos setores.",
+  },
+  {
+    title: "Inovação estratégica em M&A",
+    desc: "Soluções inovadoras têm sido desenvolvidas com foco em geração de valor e antecipação de tendências, o que tem consolidado a Liberty como referência em estratégia para M&A.",
+  },
+  {
+    title: "Transformação além da transação",
+    desc: "Cada etapa pós-transação tem sido cuidadosamente acompanhada, garantindo que a transformação do negócio seja conduzida de forma contínua e sustentável.",
+  },
+  {
+    title: "Parceria com foco no empreendedor",
+    desc: "O crescimento de negócios tem sido promovido com base em uma escuta ativa e na valorização do legado construído por cada empreendedor atendido.",
+  },
+  {
+    title: "Processos com agilidade e excelência",
+    desc: "A excelência nos resultados tem sido assegurada por processos estruturados e conduzidos com agilidade, sem comprometer a profundidade analítica e técnica.",
+  },
+  {
+    title: "Visão holística, resultados concretos",
+    desc: "Decisões estratégicas têm sido guiadas por uma visão integrada do negócio, permitindo que resultados concretos sejam alcançados com sustentabilidade e foco no longo prazo.",
+  },
+];
+---
+
+<section class="section section--soft">
+  <div class="container">
+    <p class="kicker kicker--center" data-reveal>O que defendemos?</p>
+    <h2 class="section__title" data-reveal style="--reveal-delay: 0.1s">
+      Motivos para você <span class="text-blue">escolher a Liberty</span>
+    </h2>
+
+    <div class="reasons">
+      {reasons.map((reason, i) => (
+        <div class="reason-card hover-lift" data-reveal style={`--reveal-delay: ${(i % 3) * 0.1}s`}>
+          <p class="reason-card__num">{String(i + 1).padStart(2, "0")}</p>
+          <h3>{reason.title}</h3>
+          <p>{reason.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .reason-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(40, 48, 71, 0.06);
+  }
+
+  .reason-card__num {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--color-blue-light);
+    margin-bottom: 10px;
+  }
+
+  .reason-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .reason-card p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .reasons {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    .reasons {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

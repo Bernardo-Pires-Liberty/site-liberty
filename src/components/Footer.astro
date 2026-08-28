@@ -1,0 +1,135 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <p class="logo__main" style="color: var(--color-white);">Liberty</p>
+      <p class="footer__tagline">Fusões e Aquisições, Finanças Corporativas e Estratégia Empresarial.</p>
+      <div class="footer__socials" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/libertynegociosbr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.linkedin.com/company/libertynegociosbr/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">Linkedin</a>
+      </div>
+    </div>
+
+    <nav class="footer__nav" aria-label="Mapa do site">
+      <div>
+        <h2>Fale conosco</h2>
+        <ul>
+          <li><a href="tel:+553132485000">(31) 3248-2500</a></li>
+          <li><a href="mailto:libertynegocios@libertynegocios.com.br">libertynegocios@libertynegocios.com.br</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Institucional</h2>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/quem-somos/">Quem Somos</a></li>
+          <li><a href="/equipe/">Equipe</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Soluções</h2>
+        <ul>
+          <li><a href="/solucoes/fusoes-e-aquisicoes/">Fusões e Aquisições</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Suporte</h2>
+        <ul>
+          <li><a href="/politica-de-privacidade/">Política de Privacidade</a></li>
+          <li><a href="/politica-de-compliance/">Política de Compliance</a></li>
+          <li><a href="/politica-de-cookies/">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <p>{year} — Liberty – Todos os direitos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-navy);
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer__top {
+    display: grid;
+    grid-template-columns: minmax(200px, 320px) 1fr;
+    gap: 48px;
+    padding: 64px 24px 40px;
+  }
+
+  .footer__tagline {
+    max-width: 320px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+
+  .footer__socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+
+  .footer__socials a:hover {
+    color: var(--color-white);
+  }
+
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .footer__nav h2 {
+    color: var(--color-white);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+
+  .footer__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .footer__nav a:hover {
+    color: var(--color-white);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 20px 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .footer__top {
+      grid-template-columns: 1fr;
+    }
+
+    .footer__nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

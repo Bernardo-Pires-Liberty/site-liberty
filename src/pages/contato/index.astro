@@ -1,0 +1,359 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const infoCards = [
+  {
+    title: "Nosso escritório",
+    lines: ["Rua da Bahia, 1.900 – 7º andar – Lourdes.", "BH-MG CEP 30160-017"],
+    icon: "M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+  },
+  {
+    title: "Nossos telefones",
+    lines: ["(31) 3248-2500"],
+    icon: "M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z",
+  },
+  {
+    title: "Nosso e-mail",
+    lines: ["libertynegocios@libertynegocios.com.br"],
+    icon: "M4 4h16v16H4zM4 6l8 7 8-7",
+  },
+];
+
+const mapSrc =
+  "https://maps.google.com/maps?q=Rua+da+Bahia%2C+1900+-+Lourdes%2C+Belo+Horizonte+-+MG%2C+30160-017&z=15&output=embed";
+---
+
+<Layout
+  title="Contato"
+  description="Fale com a Liberty Negócios: quer vender sua empresa, captar investimento ou melhorar sua gestão? Preencha o formulário ou entre em contato pelo telefone (31) 3248-2500."
+>
+  <section class="hero">
+    <svg class="hero__pattern" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <circle cx="620" cy="140" r="220" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+      <circle cx="700" cy="380" r="150" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+      <circle cx="560" cy="470" r="90" fill="none" stroke="rgba(77,127,214,0.35)" stroke-width="1.5" />
+    </svg>
+
+    <div class="container hero__layout">
+      <div class="hero__intro" data-reveal>
+        <h1>Soluções estratégicas para o crescimento do seu negócio.</h1>
+        <p>
+          Somos parceiros de empresas que querem crescer com inteligência, estratégia e
+          resultados. Preencha o formulário e entraremos em contato.
+        </p>
+        <hr />
+        <h2>Fale com a Liberty</h2>
+        <p>Toda a assistência que sua gestão precisa, agora com os benefícios da escala!</p>
+      </div>
+
+      <form class="form hover-lift" data-reveal style="--reveal-delay: 0.15s">
+        <p class="form__lead">
+          Quer vender sua empresa, captar investimento ou melhorar sua gestão?
+          <span class="text-blue">A gente te ajuda!</span>
+        </p>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Nome" required />
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" placeholder="Empresa" required />
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" placeholder="Telefone" required />
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="E-mail" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="segmento" class="visually-hidden">Segmento</label>
+          <select id="segmento" name="segmento" required>
+            <option value="" selected disabled>Selecione seu segmento</option>
+            <option>Construção Pesada</option>
+            <option>Saúde</option>
+            <option>Mineração e Siderurgia</option>
+            <option>Agronegócio</option>
+            <option>Logística e Varejo</option>
+            <option>TI</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="faturamento" class="visually-hidden">Faturamento anual</label>
+          <select id="faturamento" name="faturamento" required>
+            <option value="" selected disabled>Faturamento Anual</option>
+            <option>Até R$ 5 milhões</option>
+            <option>R$ 5 a 20 milhões</option>
+            <option>R$ 20 a 100 milhões</option>
+            <option>Acima de R$ 100 milhões</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="servico" class="visually-hidden">Serviço desejado</label>
+          <select id="servico" name="servico" required>
+            <option value="" selected disabled>Selecione o serviço desejado</option>
+            <option>Fusões e Aquisições</option>
+            <option>Finanças Corporativas</option>
+            <option>Estratégia Empresarial</option>
+          </select>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" name="consentimento" required />
+          <span>
+            Aceito receber e-mails com ofertas e conteúdos. Prometemos não utilizar suas
+            informações para spam, <a href="/politica-de-privacidade/">clique aqui e veja nossa Política de Dados</a>.
+          </span>
+        </label>
+
+        <button type="submit" class="btn btn--primary form__submit">Enviar</button>
+        <p class="form__status" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="info-cards">
+      {infoCards.map((card) => (
+        <div class="info-card hover-lift" data-reveal>
+          <span class="info-card__icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d={card.icon}></path>
+            </svg>
+          </span>
+          <p class="info-card__title">{card.title}</p>
+          {card.lines.map((line) => <p class="info-card__line">{line}</p>)}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <section class="map">
+    <iframe
+      src={mapSrc}
+      width="100%"
+      height="420"
+      style="border:0"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Localização da Liberty Negócios — Rua da Bahia, 1900, Lourdes, Belo Horizonte"
+    ></iframe>
+  </section>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>(".form");
+    const status = document.querySelector<HTMLParagraphElement>(".form__status");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!status) return;
+      // TODO: ligar a um backend de envio (ex: Formspree, EmailJS ou função serverless)
+      // antes de publicar — hoje o formulário não envia os dados a lugar nenhum.
+      status.hidden = false;
+      status.textContent =
+        "Recebemos sua mensagem! (envio ainda não configurado — fale com quem administra o site)";
+    });
+  </script>
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    background: linear-gradient(155deg, var(--color-navy-deep) 0%, var(--color-navy) 55%, #33224a 100%);
+    color: var(--color-white);
+    padding: 96px 0 0;
+  }
+
+  .hero__pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero__layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    padding-bottom: 64px;
+  }
+
+  .hero__intro h1 {
+    color: var(--color-white);
+    font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  }
+
+  .hero__intro p {
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 420px;
+  }
+
+  .hero__intro hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 32px 0;
+    max-width: 420px;
+  }
+
+  .hero__intro h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+  }
+
+  .form {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 36px;
+    color: var(--color-text);
+  }
+
+  .form__lead {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-navy);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .field input,
+  .field select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(40, 48, 71, 0.15);
+    font: inherit;
+    color: var(--color-navy);
+    background: var(--color-white);
+  }
+
+  .field input:focus,
+  .field select:focus {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 1px;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    margin: 8px 0 24px;
+    cursor: pointer;
+  }
+
+  .checkbox input {
+    margin-top: 3px;
+  }
+
+  .checkbox a {
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+
+  .form__submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form__status {
+    margin: 16px 0 0;
+    font-size: 0.85rem;
+    color: var(--color-blue);
+  }
+
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: -80px;
+  }
+
+  .info-card {
+    background: var(--color-white);
+    color: var(--color-text);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 16px 32px rgba(19, 27, 50, 0.18);
+  }
+
+  .info-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    color: var(--color-white);
+    margin-bottom: 14px;
+  }
+
+  .info-card__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-blue);
+    margin: 0 0 6px;
+  }
+
+  .info-card__line {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .map {
+    margin-top: 64px;
+    line-height: 0;
+  }
+
+  .map iframe {
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .hero__layout,
+    .form__row,
+    .info-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .info-cards {
+      margin-top: -40px;
+    }
+
+    .map {
+      margin-top: 40px;
+    }
+  }
+</style>

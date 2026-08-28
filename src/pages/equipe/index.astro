@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import { Image } from "astro:assets";
+
+const photoFiles = import.meta.glob<{ default: ImageMetadata }>("../../assets/team/*", {
+  eager: true,
+});
+
+function photoFor(slug: string) {
+  const entry = Object.entries(photoFiles).find(([path]) => path.includes(`/${slug}.`));
+  if (!entry) throw new Error(`Foto não encontrada para "${slug}"`);
+  return entry[1].default;
+}
+
+const team = [
+  { name: "Alexandre Figueiredo", slug: "alexandre-figueiredo" },
+  { name: "Augusto Penna", slug: "augusto-penna" },
+  { name: "Carolina Ferreira", slug: "carolina-ferreira" },
+  { name: "Camilo de Lélis", slug: "camilo-de-lelis" },
+  { name: "Geraldo Luiz M. Tavares", slug: "geraldo-luiz-tavares" },
+  { name: "Hudson Couto", slug: "hudson-couto" },
+  { name: "Ismail Antonio", slug: "ismail-antonio" },
+  { name: "Leonardo Sandes", slug: "leonardo-sandes" },
+  { name: "Márcio Henrique", slug: "marcio-henrique" },
+  { name: "Marcos Campos de Pinho", slug: "marcos-campos-de-pinho" },
+  { name: "Natália Dupin", slug: "natalia-dupin" },
+  { name: "Raquel Uchôa", slug: "raquel-uchoa" },
+  { name: "Ricardo Gorgulho", slug: "ricardo-gorgulho" },
+  { name: "Ricardo Moreira", slug: "ricardo-moreira" },
+  { name: "Romel Alves", slug: "romel-alves" },
+  { name: "Sérgio Caldeira", slug: "sergio-caldeira" },
+].map((member) => ({ ...member, photo: photoFor(member.slug) }));
+---
+
+<Layout
+  title="Equipe"
+  description="Conheça os sócios e especialistas da Liberty Negócios: décadas de experiência em gestão, contabilidade, tributos e tecnologia de processos a serviço das suas operações de M&A."
+>
+  <PageHero
+    title="Profissionais experientes com visão estratégica"
+    subtitle="Time experiente, dedicado a gerar valor e impulsionar a performance dos nossos clientes"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="intro" data-reveal>
+        <div class="intro__heading">
+          <p class="kicker">Equipe</p>
+          <h2>
+            Diferenciais e expertise da
+            <span class="text-blue">equipe multidisciplinar</span>
+          </h2>
+        </div>
+        <p class="intro__text">
+          Nossos sócios lideram com décadas de experiência em gestão, contabilidade,
+          tributos e tecnologia de processos, garantindo visão estratégica e resultados
+          de alto impacto.
+        </p>
+      </div>
+
+      <div class="team">
+        {team.map((member, i) => (
+          <div class="team-card" data-reveal style={`--reveal-delay: ${(i % 4) * 0.08}s`}>
+            <div class="team-card__photo">
+              <Image
+                src={member.photo}
+                alt={`Foto de ${member.name} — Liberty Negócios`}
+                width={480}
+                height={600}
+                loading={i < 4 ? "eager" : "lazy"}
+              />
+            </div>
+            <div class="team-card__label">
+              <p class="team-card__name">{member.name}</p>
+              <span class="team-card__more">Saiba mais <span aria-hidden="true">→</span></span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 56px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(40, 48, 71, 0.08);
+  }
+
+  .intro__heading h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  .intro__text {
+    border-left: 2px solid rgba(0, 50, 160, 0.15);
+    padding-left: 24px;
+    font-size: 0.95rem;
+    align-self: center;
+    margin: 0;
+  }
+
+  .team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+    padding-top: 56px;
+  }
+
+  .team-card {
+    text-align: center;
+  }
+
+  .team-card__photo {
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--color-bg-light);
+  }
+
+  .team-card__photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  .team-card:hover .team-card__photo :global(img) {
+    filter: grayscale(0);
+    transform: scale(1.04);
+  }
+
+  .team-card__label {
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(40, 48, 71, 0.1);
+    padding: 14px 12px;
+    margin: -28px 12px 0;
+    position: relative;
+  }
+
+  .team-card__name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    margin: 0 0 4px;
+  }
+
+  .team-card__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blue);
+  }
+
+  @media (max-width: 900px) {
+    .intro {
+      grid-template-columns: 1fr;
+    }
+
+    .intro__text {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .team {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .team {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+</style>

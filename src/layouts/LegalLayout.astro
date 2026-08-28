@@ -1,0 +1,83 @@
+---
+import Layout from "./Layout.astro";
+import PageHero from "../components/PageHero.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <!-- Sem data-reveal aqui de propósito: é um documento longo, o gatilho de
+         "20% visível" do scroll-reveal nunca dispara em blocos tão altos, o que
+         deixava o texto preso invisível. Texto legal deve aparecer direto. -->
+    <div class="container legal">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .legal :global(h2) {
+    font-size: 1.4rem;
+    margin-top: 2.2em;
+  }
+
+  .legal :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .legal :global(h3) {
+    font-size: 1.1rem;
+    color: var(--color-blue);
+    margin-top: 1.6em;
+  }
+
+  .legal :global(p) {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .legal :global(ul) {
+    margin: 0 0 1.2em;
+    padding-left: 20px;
+  }
+
+  .legal :global(li) {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+
+  .legal :global(dl) {
+    margin: 0 0 1.2em;
+  }
+
+  .legal :global(dt) {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-top: 1em;
+  }
+
+  .legal :global(dd) {
+    margin: 4px 0 0;
+    font-size: 0.98rem;
+  }
+
+  .legal :global(.legal__signature) {
+    margin-top: 1.6em;
+    font-style: italic;
+  }
+</style>

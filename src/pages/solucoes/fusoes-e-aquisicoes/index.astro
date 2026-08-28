@@ -1,0 +1,176 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import ReasonsGrid from "../../../components/ReasonsGrid.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const items = [
+  {
+    title: "Assessoria em compra e venda de empresas",
+    desc: "Orientação estratégica e legal no processo de aquisição ou venda de empresas, garantindo conformidade e maximização de valor.",
+  },
+  {
+    title: "Estruturação de transações",
+    desc: "Planejamento e criação da estrutura jurídica e financeira de uma transação para otimizar aspectos fiscais e regulatórios.",
+  },
+  {
+    title: "Due diligence e avaliação de empresas",
+    desc: "Investigação detalhada e análise de valor de empresas para identificar riscos, oportunidades e determinar seu valor justo.",
+  },
+  {
+    title: "Negociação e fechamento de contratos",
+    desc: "Negociação e elaboração de contratos para formalizar transações, protegendo os interesses das partes envolvidas.",
+  },
+];
+---
+
+<Layout
+  title="Fusões e Aquisições"
+  description="Assessoria completa em Fusões e Aquisições (M&A): compra, venda e integração de empresas, due diligence, estruturação de transações e negociação de contratos."
+>
+  <PageHero
+    title="Fusões e aquisições com segurança e estratégia"
+    subtitle="Oferecemos assessoria completa em processos de compra, venda e integração de empresas."
+  />
+
+  <section class="section">
+    <div class="container">
+      <p class="kicker" data-reveal>Soluções</p>
+      <h2 data-reveal style="--reveal-delay: 0.1s">Fusões e Aquisições</h2>
+
+      <div class="content">
+        <div class="content__visual hover-lift" data-reveal style="--reveal-delay: 0.1s" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="content__visual-pattern">
+            <circle cx="150" cy="40" r="70" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+            <circle cx="40" cy="160" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+          </svg>
+          <svg viewBox="0 0 24 24" class="content__visual-icon" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 12h8M12 8v8M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" />
+          </svg>
+        </div>
+
+        <ul class="checklist">
+          {items.map((item, i) => (
+            <li data-reveal style={`--reveal-delay: ${0.1 + i * 0.08}s`}>
+              <span class="checklist__icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div>
+                <p class="checklist__title">{item.title}</p>
+                <p class="checklist__desc">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="section__cta">
+        <a href="/contato/" class="btn btn--primary">Vamos conversar</a>
+      </div>
+    </div>
+  </section>
+
+  <ReasonsGrid />
+
+  <FinalCta heading="Pronto para conduzir sua próxima operação de M&A com a Liberty?" />
+</Layout>
+
+<style>
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin-bottom: 40px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .content__visual {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+    background: linear-gradient(155deg, var(--color-navy-deep) 0%, var(--color-navy) 55%, #1c3f7a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content__visual-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content__visual-icon {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(40, 48, 71, 0.08);
+  }
+
+  .checklist li:first-child {
+    padding-top: 0;
+  }
+
+  .checklist__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+  }
+
+  .checklist__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 0 0 4px;
+  }
+
+  .checklist__desc {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .section__cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+
+    .content__visual {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+</style>

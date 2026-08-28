@@ -1,0 +1,269 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/PageHero.astro";
+import ReasonsGrid from "../../components/ReasonsGrid.astro";
+import FinalCta from "../../components/FinalCta.astro";
+
+const stats = [
+  { end: 1.3, decimals: 1, unit: "B", label: "em ativos sob negociação" },
+  { end: 13, decimals: 0, unit: "", label: "anos de expertise" },
+  { end: 16, decimals: 0, unit: "", label: "especialistas em M&A" },
+];
+
+const pillars = [
+  {
+    label: "Visão",
+    icon: "M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+  },
+  {
+    label: "Missão",
+    icon: "M12 2v20M2 12h20M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z",
+  },
+  {
+    label: "Valores",
+    icon: "M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 4 2-2.5 3.5-4 5.5-4 3.5 0 6 3.5 4 7.5C19 16.65 12 21 12 21z",
+  },
+];
+---
+
+<Layout
+  title="Quem Somos"
+  description="Há mais de 13 anos, a Liberty Negócios conduz operações de M&A com excelência, segurança e foco em gerar valor real para seus clientes. Conheça nossa história, visão, missão e valores."
+>
+  <PageHero
+    title="Compromisso com a excelência e o crescimento"
+    subtitle="Atuação estratégica e personalizada para transformar cada negócio em uma história de sucesso sustentável."
+  />
+
+  <!-- Quem Somos -->
+  <section class="section">
+    <div class="container about">
+      <div class="about__visual hover-lift" data-reveal aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="about__visual-pattern">
+          <circle cx="150" cy="40" r="70" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+          <circle cx="40" cy="160" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+        </svg>
+        <svg viewBox="0 0 24 24" class="about__visual-icon" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+
+      <div class="about__side" data-reveal style="--reveal-delay: 0.15s">
+        <p class="kicker">Quem Somos</p>
+        <h2>
+          Na Liberty Negócios entendemos que uma transação
+          <span class="text-blue">de M&A vai além da assinatura</span>
+        </h2>
+        <p>
+          Na Liberty Negócios, nossa promessa é transcendente: ir além do esperado,
+          romper fronteiras convencionais e elevar cada transação de M&A a um novo
+          patamar de excelência. Nossa diferenciação está enraizada na alta capacidade
+          e expertise inigualável de nossa equipe, cujo compromisso é moldar o futuro
+          dos negócios de nossos clientes.
+        </p>
+        <p>
+          Com mais de 13 anos de experiência, atuamos com foco em gerar valor real
+          para nossos clientes, conduzindo negócios com excelência, segurança e
+          resultados concretos.
+        </p>
+        <p>
+          Nosso compromisso é impulsionar o crescimento de empresas por meio de
+          oportunidades sólidas e relacionamentos duradouros.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visão, Missão e Valores -->
+  <section class="section section--soft">
+    <div class="container pillars">
+      <div class="pillars__stat" data-reveal>
+        <p class="pillars__stat-value">+13</p>
+        <p class="pillars__stat-label">anos de experiência</p>
+      </div>
+
+      <div class="pillars__content" data-reveal style="--reveal-delay: 0.15s">
+        <div class="pillars__icons">
+          {pillars.map((p) => (
+            <div class="pillars__icon-item">
+              <span class="pillars__icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={p.icon}></path>
+                </svg>
+              </span>
+              <span>{p.label}</span>
+            </div>
+          ))}
+        </div>
+        <p>
+          Visualizamos, na Liberty Negócios, um futuro em que cada transação
+          empresarial se transforma em uma oportunidade para converter desafios em
+          sucessos para nossos clientes e parceiros.
+        </p>
+        <p>
+          Almejamos ser reconhecidos como referência em ética, inovação e resultados
+          excepcionais, promovendo o desenvolvimento sustentável das organizações em
+          um ambiente em constante evolução.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section stats-plain">
+    <div class="container stats-plain__grid">
+      {stats.map((s, i) => (
+        <div class="stat-plain" data-reveal style={`--reveal-delay: ${i * 0.12}s`}>
+          <p
+            class="stat-plain__value"
+            data-counter-end={s.end}
+            data-counter-decimals={s.decimals}
+            data-counter-unit={s.unit}
+            data-counter-prefix="+"
+          >
+            +0{s.unit}
+          </p>
+          <p class="stat-plain__label">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <ReasonsGrid />
+
+  <FinalCta />
+</Layout>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .about__visual {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    background: linear-gradient(155deg, var(--color-navy-deep) 0%, var(--color-navy) 55%, #1c3f7a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about__visual-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .about__visual-icon {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .about h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  .about__side p {
+    font-size: 0.95rem;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .pillars__stat {
+    background: linear-gradient(155deg, var(--color-blue) 0%, var(--color-navy-deep) 130%);
+    color: var(--color-white);
+    border-radius: 20px;
+    padding: 56px 32px;
+    text-align: center;
+  }
+
+  .pillars__stat-value {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+  }
+
+  .pillars__stat-label {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .pillars__icons {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 24px;
+  }
+
+  .pillars__icon-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-navy);
+    font-size: 0.95rem;
+  }
+
+  .pillars__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  .pillars__content p {
+    font-size: 0.95rem;
+  }
+
+  .stats-plain__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .stat-plain__value {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: 4px;
+  }
+
+  .stat-plain__label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .about,
+    .pillars,
+    .stats-plain__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

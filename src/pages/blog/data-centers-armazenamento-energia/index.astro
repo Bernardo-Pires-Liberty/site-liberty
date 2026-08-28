@@ -1,0 +1,144 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "Data Centers e Armazenamento de Energia: pilares da modernização da infraestrutura no Brasil";
+const description =
+  "O avanço da digitalização, da computação em nuvem e da inteligência artificial tem impulsionado globalmente a demanda por data centers, transformando a infraestrutura civil e energética do Brasil.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2025-09-29",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">Data Center</span>
+        <time datetime="2025-09-29">29 de setembro de 2025</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Data Centers</h2>
+        <p>
+          O avanço da digitalização, da computação em nuvem e da inteligência artificial
+          tem impulsionado globalmente a demanda por data centers, transformando a
+          infraestrutura civil e energética em um eixo estratégico de desenvolvimento.
+          Nesse cenário, o Brasil destaca-se como um dos mercados mais promissores,
+          combinando vantagens estruturais como matriz elétrica majoritariamente
+          renovável, custo competitivo de energia, disponibilidade territorial e
+          proximidade dos principais centros de tráfego internacional de dados.
+        </p>
+        <p>
+          O governo federal prepara a Nova Política de Data Centers, com diretrizes
+          voltadas à atração de investimentos, estímulo à inovação tecnológica e
+          fortalecimento da soberania digital. No setor privado, o movimento também é
+          expressivo, e segundo o Synergy Research Group as fusões e aquisições globais
+          envolvendo data centers atingiram um recorde de U$ 57 bilhões em 2024,
+          superando o pico anterior de 2022, com participação predominante de fundos de
+          private equity. A previsão é que outros 29 bilhões em transações sejam
+          concluídos ainda neste ano.
+        </p>
+        <p>
+          A consultoria CBRE estima que a América Latina adicionará 340 MW em capacidade
+          até o fim de 2025, dos quais 220 MW estarão no Brasil, consolidando a
+          liderança regional. Essa expansão sustenta a demanda por obras civis de grande
+          porte, sistemas elétricos redundantes, climatização, subestações e
+          fornecimento contínuo de energia, proporcionando um terreno fértil para
+          atuação no setor.
+        </p>
+
+        <h2>Armazenamento de Energia (BESS)</h2>
+        <p>
+          Os sistemas de armazenamento de energia por baterias vêm ganhando importância
+          diante da crescente penetração de fontes renováveis intermitentes, como eólica
+          e solar. Esses sistemas permitem o deslocamento temporal da energia gerada,
+          aumentando a previsibilidade, o controle operacional e a estabilidade da rede
+          elétrica. No Brasil, a maior ocorrência de eventos de curtailment tem
+          reforçado o debate sobre o uso de baterias para armazenar excedentes e injetar
+          energia em momentos mais críticos, inclusive aproveitando oportunidades de
+          arbitragem de preços no mercado livre.
+        </p>
+        <p>
+          A regulamentação começa a avançar e o Ministério de Minas e Energia abriu
+          consulta pública para discutir a inclusão de sistemas de armazenamento nos
+          Leilões de Reserva de Capacidade, corrigindo uma lacuna normativa que limitava
+          a participação das baterias em projetos de geração. Além disso, as BESS têm
+          potencial para fornecer serviços ancilares com maior agilidade do que usinas
+          hidrelétricas, o que exige a criação de um mercado específico para esse tipo
+          de serviço. No campo industrial, o governo já implementa medidas para
+          estimular a produção local, como o Processo Produtivo Básico para baterias e
+          um projeto de lei que busca classificar minerais estratégicos com incentivos
+          fiscais.
+        </p>
+
+        <p class="article__conclusion">
+          A convergência entre digitalização acelerada e transição energética consolida
+          os data centers e os sistemas de armazenamento como pilares centrais da
+          modernização da infraestrutura brasileira, criando um ambiente de
+          oportunidades relevantes para investidores, operadores e empresas de
+          engenharia.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage = "/og-image.png" } = Astro.props;
+
+const siteName = "Liberty Negócios";
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteName,
+  url: Astro.site?.toString(),
+  logo: new URL("/logo.png", Astro.site).toString(),
+  description:
+    "Assessoria especializada em Fusões e Aquisições (M&A), Finanças Corporativas e Estratégia Empresarial.",
+  telephone: "+55-31-3248-2500",
+  email: "libertynegocios@libertynegocios.com.br",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua da Bahia, 1900 - 7º andar - Lourdes",
+    addressLocality: "Belo Horizonte",
+    addressRegion: "MG",
+    postalCode: "30160-017",
+    addressCountry: "BR",
+  },
+  sameAs: [
+    "https://www.instagram.com/libertynegociosbr/",
+    "https://www.linkedin.com/company/libertynegociosbr/posts/?feedView=all",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#283047" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Scroll-reveal (fade + rise) for any element with [data-reveal],
+      // plus an optional count-up for [data-counter-end] number blocks.
+      // Shared across every page via this layout — no per-page JS needed.
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function animateCounter(el: HTMLElement) {
+        const end = parseFloat(el.dataset.counterEnd ?? "0");
+        const decimals = parseInt(el.dataset.counterDecimals ?? "0", 10);
+        const unit = el.dataset.counterUnit ?? "";
+        const prefix = el.dataset.counterPrefix ?? "";
+        const duration = 1100;
+        const start = performance.now();
+
+        function tick(now: number) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = `${prefix}${(end * eased).toFixed(decimals)}${unit}`;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const revealTargets = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+      function counterElOf(el: HTMLElement) {
+        return el.matches("[data-counter-end]")
+          ? el
+          : el.querySelector<HTMLElement>("[data-counter-end]");
+      }
+
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        revealTargets.forEach((el) => {
+          el.classList.add("is-visible");
+          const counterEl = counterElOf(el);
+          if (counterEl) {
+            const unit = counterEl.dataset.counterUnit ?? "";
+            const prefix = counterEl.dataset.counterPrefix ?? "";
+            counterEl.textContent = `${prefix}${counterEl.dataset.counterEnd}${unit}`;
+          }
+        });
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              const el = entry.target as HTMLElement;
+              el.classList.add("is-visible");
+              const counterEl = counterElOf(el);
+              if (counterEl) animateCounter(counterEl);
+              observer.unobserve(el);
+            }
+          },
+          // threshold: 0 fires as soon as the element starts entering the
+          // viewport at all — a fixed ratio like 0.2 would never be reached
+          // for elements taller than ~5x the viewport (e.g. long legal text),
+          // leaving them stuck invisible forever.
+          { threshold: 0, rootMargin: "0px 0px -40px 0px" }
+        );
+
+        revealTargets.forEach((el) => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>
