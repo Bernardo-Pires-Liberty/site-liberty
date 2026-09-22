@@ -1,0 +1,64 @@
+{
+  "redirects": [
+    {
+      "source": "/fusoes-e-aquisicoes/",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/fusoes-e-aquisicoes",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/data-centers-e-armazenamento-de-energia-pilares-da-modernizacao-da-infraestrutura-no-brasil/",
+      "destination": "/blog/data-centers-armazenamento-energia/",
+      "permanent": true
+    },
+    {
+      "source": "/data-centers-e-armazenamento-de-energia-pilares-da-modernizacao-da-infraestrutura-no-brasil",
+      "destination": "/blog/data-centers-armazenamento-energia/",
+      "permanent": true
+    },
+    {
+      "source": "/financas-corporativas/",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/financas-corporativas",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/estrategia-empresarial/",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/estrategia-empresarial",
+      "destination": "/solucoes/fusoes-e-aquisicoes/",
+      "permanent": true
+    },
+    {
+      "source": "/sucesso/",
+      "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/sucesso",
+      "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/category/data-center/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/category/data-center",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ]
+}
