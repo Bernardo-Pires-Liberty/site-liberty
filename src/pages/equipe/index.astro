@@ -15,11 +15,10 @@ function photoFor(slug: string) {
 
 const team = [
   { name: "Alexandre Figueiredo", slug: "alexandre-figueiredo" },
-  { name: "Augusto Penna", slug: "augusto-penna" },
+  { name: "Alfredo Machado Pires", slug: "Alfredo-pires" },
   { name: "Carolina Ferreira", slug: "carolina-ferreira" },
   { name: "Camilo de Lélis", slug: "camilo-de-lelis" },
   { name: "Geraldo Luiz M. Tavares", slug: "geraldo-luiz-tavares" },
-  { name: "Hudson Couto", slug: "hudson-couto" },
   { name: "Ismail Antonio", slug: "ismail-antonio" },
   { name: "Leonardo Sandes", slug: "leonardo-sandes" },
   { name: "Márcio Henrique", slug: "marcio-henrique" },
@@ -29,7 +28,6 @@ const team = [
   { name: "Ricardo Gorgulho", slug: "ricardo-gorgulho" },
   { name: "Ricardo Moreira", slug: "ricardo-moreira" },
   { name: "Romel Alves", slug: "romel-alves" },
-  { name: "Sérgio Caldeira", slug: "sergio-caldeira" },
 ].map((member) => ({ ...member, photo: photoFor(member.slug) }));
 ---
 
@@ -73,7 +71,6 @@ const team = [
             </div>
             <div class="team-card__label">
               <p class="team-card__name">{member.name}</p>
-              <span class="team-card__more">Saiba mais <span aria-hidden="true">→</span></span>
             </div>
           </div>
         ))}
@@ -149,16 +146,7 @@ const team = [
     font-weight: 700;
     font-size: 0.95rem;
     color: var(--color-navy);
-    margin: 0 0 4px;
-  }
-
-  .team-card__more {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-blue);
+    margin: 0;
   }
 
   @media (max-width: 900px) {
