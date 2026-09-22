@@ -2,8 +2,71 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHero from "../../components/PageHero.astro";
 
-// Hoje há apenas 1 artigo publicado — cada novo post entra neste array.
+// Cada novo post entra neste array (mais recente primeiro).
 const posts = [
+  {
+    category: "E-commerce",
+    date: "2026-09-22",
+    dateLabel: "22 de setembro de 2026",
+    title: "Marketplaces e Varejo Online: a consolidação que impulsiona o M&A em e-commerce no Brasil",
+    excerpt:
+      "Concorrência internacional, quick commerce e consolidação de marketplaces redesenham o e-commerce e abrem um novo ciclo de fusões e aquisições no setor.",
+    href: "/blog/ma-ecommerce/",
+  },
+  {
+    category: "TI",
+    date: "2026-09-17",
+    dateLabel: "17 de setembro de 2026",
+    title: "M&A em Tecnologia: consolidação de software e IA redefinem as fusões e aquisições no Brasil",
+    excerpt:
+      "Dados da KPMG, Bain & Company e Questum mostram como a consolidação de startups, software e inteligência artificial impulsiona o M&A em tecnologia no Brasil.",
+    href: "/blog/ma-tecnologia/",
+  },
+  {
+    category: "Logística e Varejo",
+    date: "2026-09-12",
+    dateLabel: "12 de setembro de 2026",
+    title: "M&A em Logística e Varejo: a consolidação que redesenha o mercado brasileiro",
+    excerpt:
+      "Consolidação, last-mile e omnichannel impulsionam fusões e aquisições em logística e varejo no Brasil, atraindo private equity e grupos internacionais.",
+    href: "/blog/ma-logistica-varejo/",
+  },
+  {
+    category: "Construção Pesada",
+    date: "2026-09-08",
+    dateLabel: "8 de setembro de 2026",
+    title: "Construção Civil e Infraestrutura: os novos motores do M&A no setor de construção no Brasil",
+    excerpt:
+      "Concessões, leilões de infraestrutura e consolidação de construtoras redefinem o M&A no setor de construção civil e pesada no Brasil.",
+    href: "/blog/ma-construcao-civil/",
+  },
+  {
+    category: "Mineração e Siderurgia",
+    date: "2026-09-01",
+    dateLabel: "1 de setembro de 2026",
+    title: "Mineração e Siderurgia: minerais críticos aceleram a consolidação e o M&A no Brasil",
+    excerpt:
+      "Terras raras, nióbio, lítio e cobre impulsionam fusões e aquisições na mineração e siderurgia brasileira, atraindo capital estrangeiro e private equity.",
+    href: "/blog/ma-mineracao-siderurgia/",
+  },
+  {
+    category: "Agronegócio",
+    date: "2026-08-25",
+    dateLabel: "25 de agosto de 2026",
+    title: "Fusões e Aquisições no Agronegócio: a consolidação que redesenha o setor brasileiro",
+    excerpt:
+      "Volume recorde de operações, consolidação entre cooperativas e apetite de fundos de private equity marcam o M&A no agronegócio brasileiro em 2025 e 2026.",
+    href: "/blog/ma-agronegocio/",
+  },
+  {
+    category: "Saúde",
+    date: "2026-08-18",
+    dateLabel: "18 de agosto de 2026",
+    title: "Hospitais e Operadoras de Saúde: a consolidação que acelera o M&A no Brasil",
+    excerpt:
+      "A consolidação hospitalar impulsiona o M&A no setor de saúde no Brasil, com alta nas transações e forte apetite de investidores em 2025, aponta a KPMG.",
+    href: "/blog/ma-setor-saude/",
+  },
   {
     category: "Data Center",
     date: "2025-09-29",

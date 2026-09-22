@@ -1,0 +1,146 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "Marketplaces e Varejo Online: a consolidação que impulsiona o M&A em e-commerce no Brasil";
+const description =
+  "Concorrência internacional, quick commerce e consolidação de marketplaces redesenham o e-commerce e abrem um novo ciclo de fusões e aquisições no setor.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-09-22",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">E-commerce</span>
+        <time datetime="2026-09-22">22 de setembro de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Consolidação de Marketplaces em um Mercado Bilionário</h2>
+        <p>
+          O e-commerce brasileiro segue em trajetória de expansão que raramente se via fora
+          de mercados maduros: segundo a ABComm e a Confi Neotrust, o setor faturou mais de
+          R$ 200 bilhões em 2025, avanço superior a 10% em relação ao ano anterior, com a
+          ABComm projetando faturamento acima de R$ 258 bilhões para 2026. Esse volume
+          crescente de receita, associado à maturação digital do consumidor, tem tornado o
+          comércio eletrônico um dos ativos mais disputados no radar de fusões e aquisições
+          no varejo online.
+        </p>
+        <p>
+          Segundo a TTR Data, o mercado transacional brasileiro somou 1.644 operações até
+          novembro de 2025, movimentando R$ 256 bilhões, com o segmento de Internet,
+          Software e Serviços de TI liderando em número de negócios — reflexo direto da
+          digitalização acelerada de operações comerciais. Já a KPMG, em sua Pesquisa
+          Fusões e Aquisições, registrou 94 transações no setor de consumo e varejo entre
+          janeiro e setembro de 2025, uma retração pontual de 10% frente a 2024, mas que
+          ainda assim manteve o segmento respondendo por 8% a 9% do total de operações do
+          mercado brasileiro — um patamar que reforça o apetite consolidado por M&A em
+          e-commerce e pela integração entre canais físicos e digitais.
+        </p>
+
+        <h2>Pressão Competitiva Internacional Acelera a Corrida por Escala</h2>
+        <p>
+          A chegada e expansão acelerada de players asiáticos como Shein, Temu e Shopee tem
+          redesenhado o mapa competitivo do varejo online no Brasil, pressionando
+          marketplaces estabelecidos como Mercado Livre, Amazon e Magalu a reagir com
+          investimento pesado em logística, tecnologia e ecossistema financeiro. O Mercado
+          Livre anunciou para 2026 um investimento recorde de R$ 57 bilhões no país, alta
+          de 50% em relação ao ano anterior — movimento que evidencia como a disputa por
+          participação de mercado tem elevado o custo de manter liderança isolada, tornando
+          a consolidação de marketplaces e a aquisição de operações complementares
+          (logística, meios de pagamento, tecnologia de dados) uma via cada vez mais
+          racional para grupos varejistas tradicionais.
+        </p>
+        <p>
+          O mesmo movimento de concentração aparece no quick commerce e no social commerce,
+          subsegmentos que crescem em ritmo acelerado e atraem capital estratégico. O
+          mercado de quick commerce brasileiro, liderado por iFood, Rappi e Zé Delivery,
+          deve encerrar 2025 em torno de US$ 4,64 bilhões, avanço de 8,8% sobre 2024, com
+          projeção de alcançar US$ 6,45 bilhões até 2029. Um exemplo concreto de
+          consolidação nesse nicho foi a entrada do iFood como sócio minoritário da Daki,
+          especialista em dark stores, em maio de 2026. Já no social commerce, estudo da
+          Accenture projeta que mais de 40% das compras online globais ocorrerão em
+          plataformas sociais até 2030, com o Instagram Shopping já respondendo por 22% das
+          compras iniciadas em redes sociais no Brasil — um indicativo de que ferramentas
+          de social selling e checkout integrado tendem a se tornar alvos crescentes de
+          aquisição por operadores de e-commerce que buscam ampliar seus canais de
+          originação de venda.
+        </p>
+
+        <p class="article__conclusion">
+          Entre a pressão de novos entrantes internacionais, a corrida por escala logística
+          e a fragmentação de canais como quick commerce e social commerce, o e-commerce
+          brasileiro reúne hoje os ingredientes clássicos que costumam anteceder ciclos
+          intensos de fusões e aquisições: crescimento de receita, pulverização de
+          operações regionais e a necessidade estratégica de consolidar tecnologia, dados e
+          capilaridade logística sob uma única estrutura. Para empresas do setor, entender
+          o momento certo de buscar um parceiro, investidor ou comprador — e, para
+          investidores, identificar os ativos mais bem posicionados nessa consolidação — é
+          o que deve definir os vencedores do próximo ciclo do varejo digital brasileiro.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

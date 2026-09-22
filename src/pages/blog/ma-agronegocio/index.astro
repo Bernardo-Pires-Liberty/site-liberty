@@ -1,0 +1,158 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "Fusões e Aquisições no Agronegócio: a consolidação que redesenha o setor brasileiro";
+const description =
+  "Volume recorde de operações, consolidação entre cooperativas e apetite de fundos de private equity marcam o M&A no agronegócio brasileiro em 2025 e 2026.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-08-25",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">Agronegócio</span>
+        <time datetime="2026-08-25">25 de agosto de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Volume de transações e o novo perfil dos negócios</h2>
+        <p>
+          O agronegócio brasileiro consolidou-se como um dos setores mais aquecidos do
+          mercado de fusões e aquisições no país. Segundo levantamento da PwC Brasil, o
+          setor registrou 60 operações de M&A entre janeiro e novembro de 2025, alta de
+          15% em relação ao mesmo período de 2024, com projeção de crescimento de até
+          40% no fechamento do ano — patamar que se aproxima dos números observados em
+          2021. Os segmentos de agropecuária, avicultura e laticínios lideraram o
+          avanço, com destaque para operações lideradas por investidores nacionais, que
+          responderam por cerca de 68% das transações do período, concentradas
+          principalmente na região Sudeste.
+        </p>
+        <p>
+          O primeiro semestre de 2026, porém, trouxe um cenário mais seletivo. Dados da
+          KPMG apontam que o mercado de M&A no agronegócio movimentou R$ 2,983 bilhões
+          entre janeiro e junho, queda de 60,1% frente aos R$ 7,467 bilhões do mesmo
+          período de 2025, ainda que o número de operações tenha se mantido praticamente
+          estável, com 34 negócios ante 35 um ano antes. Para Allan Riddell,
+          sócio-líder da área de fusões e aquisições da KPMG, o movimento reflete uma
+          mudança relevante no perfil das transações: "menos deals, mas deals maiores".
+          O dado reforça uma tendência já observada em outros setores da economia
+          brasileira, em que a consolidação agropecuária passa a privilegiar operações
+          estratégicas de maior porte, em vez de aquisições pulverizadas.
+        </p>
+
+        <h2>Consolidação entre cooperativas e tradings</h2>
+        <p>
+          Um dos vetores mais relevantes da consolidação agropecuária no Brasil vem do
+          próprio cooperativismo. Segundo a Organização das Cooperativas Brasileiras
+          (OCB), o número de cooperativas em atividade no país recuou de 4.509 em 2023
+          para 4.400 em 2025, movimento associado à busca por escala e competitividade
+          diante de um mercado cada vez mais concentrado. A entidade tem incentivado o
+          chamado intercooperativismo — fusões e parcerias entre cooperativas — como
+          caminho para garantir a perenidade de operações regionais menores. Ainda
+          assim, o ramo agropecuário do cooperativismo segue em expansão financeira: as
+          cooperativas do setor movimentaram R$ 487,3 bilhões em ingressos em 2025, alta
+          de 11,2% sobre os R$ 438,3 bilhões registrados em 2024, reunindo 1.254
+          cooperativas e mais de 1,13 milhão de cooperados em todo o país.
+          Simultaneamente, tradings e distribuidoras de insumos têm reorganizado
+          portfólios, com transferência de unidades e redução de exposição direta em
+          determinados elos da cadeia, ao passo que cooperativas e grupos regionais
+          ampliam presença geográfica por meio de aquisições.
+        </p>
+
+        <h2>Agtechs, biotecnologia e o apetite de fundos de investimento</h2>
+        <p>
+          O interesse de capital especializado no agronegócio também segue robusto.
+          Levantamento da consultoria Valoral Advisors aponta que mais de mil fundos
+          globais tinham cerca de US$ 150 bilhões disponíveis para investimento no
+          agronegócio em 2025, evidenciando o apetite por oportunidades em agricultura,
+          alimentos, nutrição e biotecnologia. Na América Latina, gestoras como Patria,
+          Aqua Capital, Vinci Partners, KPTL, Barn e Vox Capital figuram entre os fundos
+          de private equity e venture capital mais ativos no setor. Já no universo das
+          agtechs, o ritmo de aportes segue mais seletivo do que nos ciclos de maior
+          liquidez, com investidores priorizando modelos escaláveis e resultados
+          comprovados — em janeiro de 2026, quatro startups do agronegócio brasileiro
+          receberam juntas R$ 207 milhões, valor equivalente a cerca de 30% de todo o
+          capital captado pelas agtechs do país ao longo de 2025. O movimento sinaliza
+          uma fase de maturação do venture capital agro, em que a consolidação também se
+          manifesta por meio de aquisições estratégicas de startups por players
+          consolidados, em vez de rodadas isoladas de captação.
+        </p>
+
+        <p class="article__conclusion">
+          O conjunto desses movimentos confirma que a consolidação agropecuária no
+          Brasil deixou de ser um fenômeno pontual para se tornar uma tendência
+          estrutural, impulsionada por cooperativas em busca de escala, tradings
+          reorganizando cadeias produtivas e fundos globais atentos a oportunidades em
+          biotecnologia e agtechs. Para empresas familiares, cooperativas e grupos
+          regionais, entender esse ambiente de fusões e aquisições no agronegócio é
+          condição essencial para transformar consolidação em vantagem competitiva —
+          um processo em que a assessoria especializada faz toda a diferença na condução
+          segura de cada etapa da transação.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

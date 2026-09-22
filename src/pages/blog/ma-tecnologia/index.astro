@@ -1,0 +1,151 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "M&A em Tecnologia: consolidação de software e IA redefinem as fusões e aquisições no Brasil";
+const description =
+  "Dados da KPMG, Bain & Company e Questum mostram como a consolidação de startups, software e inteligência artificial impulsiona o M&A em tecnologia no Brasil.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-09-17",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">TI</span>
+        <time datetime="2026-09-17">17 de setembro de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Consolidação acelerada no setor de TI</h2>
+        <p>
+          A tecnologia da informação segue como o setor mais aquecido do mercado
+          brasileiro de fusões e aquisições. Segundo a Pesquisa Fusões e Aquisições da
+          KPMG, a TI manteve a liderança pelo terceiro ano consecutivo em número de
+          operações, com 415 transações registradas entre janeiro e setembro de 2025,
+          das quais 278 contaram com participação de fundos de private equity ou venture
+          capital. Software B2B, fintechs, plataformas de gestão e empresas com receita
+          recorrente baseada em SaaS estiveram entre os alvos preferidos dos
+          compradores.
+        </p>
+        <p>
+          No consolidado do mercado brasileiro, a KPMG e a Bain & Company registraram
+          1.581 transações de M&A em 2025, movimentando cerca de US$ 51 bilhões, alta de
+          8% em relação a 2024. Um dos movimentos mais relevantes do período foi o
+          avanço da participação de fundos de private equity e venture capital, que
+          passaram de 43% para 50% do total de operações, reforçando o papel desses
+          investidores como protagonistas da consolidação de empresas de TI no país. No
+          segmento específico de SaaS, o Brasil concentra cerca de 64% das transações
+          realizadas na América Latina, com 263 operações fechadas em 2025 e volume de
+          aproximadamente US$ 2,1 bilhões, avanço de 6% sobre o ano anterior.
+        </p>
+
+        <h2>Inteligência artificial redefine as teses de aquisição</h2>
+        <p>
+          A inteligência artificial deixou de ser um diferencial e passou a ser um
+          requisito nas teses de aquisição de empresas de tecnologia. Levantamentos
+          recentes do ecossistema, como o da Questum, apontam que o primeiro semestre de
+          2026 registrou queda no volume de transações de M&A envolvendo startups
+          brasileiras, mas o recuo está mais associado a uma régua de avaliação mais
+          alta do que a falta de apetite comprador. Compradores estratégicos e fundos
+          têm priorizado empresas com dado proprietário, aplicação real de IA em seus
+          produtos, receita recorrente comprovada e churn controlado, sinal de um
+          mercado de fusões e aquisições de startups mais maduro e seletivo.
+        </p>
+        <p>
+          Outra tendência marcante de 2025 foi o protagonismo do capital estrangeiro:
+          mais de 70% das transações de tecnologia avaliadas no ano tiveram compradores
+          internacionais, evidenciando o apetite de players globais pelas empresas
+          brasileiras de software e a relevância do país como plataforma de
+          consolidação regional. Ao mesmo tempo, companhias tradicionais de varejo,
+          agronegócio e serviços financeiros têm adquirido startups de IA para acelerar
+          sua transformação digital, ampliando o número de compradores estratégicos
+          ativos no setor.
+        </p>
+
+        <h2>Consolidadores estratégicos e o papel do SaaS</h2>
+        <p>
+          O movimento de consolidação de empresas de TI também ganhou tração com a
+          entrada de plataformas dedicadas a comprar e integrar software houses. Um
+          exemplo é a Canopy, consolidadora fundada em 2024 com o objetivo de reunir
+          empresas de software no Brasil, que recebeu um aporte de US$ 100 milhões e já
+          concluiu aquisições como Sollus, Topcom, Maxicom e Uniware. Esse tipo de
+          estrutura, comum em mercados mais maduros, tende a se multiplicar no Brasil à
+          medida que o setor de tecnologia amadurece e passa a demandar processos de
+          M&A mais estruturados, com due diligence técnica, integração pós-aquisição e
+          disciplina de valuation.
+        </p>
+
+        <p class="article__conclusion">
+          Entre a consolidação de software houses, o apetite renovado de fundos de
+          private equity e venture capital e a inteligência artificial como novo
+          critério de avaliação, o M&A em tecnologia consolida-se como uma das frentes
+          mais dinâmicas do mercado brasileiro, abrindo oportunidades relevantes para
+          empresas que buscam crescer por aquisição ou se posicionar para uma
+          transação estratégica.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

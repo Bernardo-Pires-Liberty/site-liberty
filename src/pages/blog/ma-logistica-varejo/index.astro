@@ -1,0 +1,150 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "M&A em Logística e Varejo: a consolidação que redesenha o mercado brasileiro";
+const description =
+  "Consolidação, last-mile e omnichannel impulsionam fusões e aquisições em logística e varejo no Brasil, atraindo private equity e grupos internacionais.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-09-12",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">Logística e Varejo</span>
+        <time datetime="2026-09-12">12 de setembro de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Logística: consolidação acelerada pelo e-commerce e pelo last-mile</h2>
+        <p>
+          O crescimento sustentado do comércio eletrônico continua a pressionar a
+          infraestrutura logística brasileira. Segundo a Associação Brasileira de
+          Comércio Eletrônico (ABComm), as vendas online devem movimentar R$ 224,7
+          bilhões no Brasil em 2025, um avanço de 10% em relação a 2024. Esse ritmo
+          de expansão tem exigido maior capilaridade, tecnologia e escala dos
+          operadores logísticos, especialmente no segmento de last-mile, o que vem
+          se traduzindo em um movimento consistente de fusões e aquisições no
+          setor.
+        </p>
+        <p>
+          De acordo com a TTR Data, o mercado transacional brasileiro registrou
+          1.877 transações em 2025, movimentando R$ 313,5 bilhões, crescimento de
+          7% no número de operações e de 15% no capital mobilizado frente ao ano
+          anterior. O segmento de logística e transporte costuma responder por
+          algo entre 8% e 12% do total de negócios fechados no país, participação
+          que tende a crescer: um estudo da Redirection International, divulgado
+          pelo portal Logweb, projeta expansão média de 4,8% ao ano para o setor
+          logístico nos próximos cinco anos, com intensificação de movimentos de
+          consolidação, digitalização e ganho de escala operacional.
+        </p>
+        <p>
+          Um exemplo emblemático desse apetite consolidador foi a aquisição de
+          cerca de 48% da Santos Brasil pela francesa CMA CGM, negócio da ordem de
+          R$ 6,3 bilhões, aprovado sem restrições pelo Conselho Administrativo de
+          Defesa Econômica (Cade). A operação reforça o interesse crescente de
+          grupos internacionais por ativos estratégicos de infraestrutura
+          portuária e logística no Brasil, em movimentos de M&A em logística que
+          combinam ganho de escala, integração de cadeia e acesso a mercados em
+          expansão.
+        </p>
+
+        <h2>Varejo: consolidação omnichannel e entrada de private equity</h2>
+        <p>
+          No varejo, a consolidação segue como tendência estrutural. De acordo com
+          a PwC Brasil, o setor de consumo e varejo está entre os mais ativos do
+          mercado de fusões e aquisições no país, em um intenso processo de
+          consolidação no qual grandes redes adquirem operações menores para
+          ganhar escala e eficiência operacional, respondendo por cerca de 15% das
+          transações no primeiro semestre de 2025. O câmbio depreciado também
+          contribuiu para tornar ativos varejistas brasileiros mais atrativos a
+          grupos estrangeiros, enquanto companhias nacionais bem capitalizadas
+          aproveitaram o mesmo cenário para crescer via aquisições estratégicas,
+          muitas vezes voltadas à integração de canais físicos e digitais em
+          estratégias omnichannel.
+        </p>
+        <p>
+          Os dados da KPMG confirmam a resiliência desse mercado: até setembro de
+          2025 foram registradas 1.164 transações no Brasil, somando R$ 220
+          bilhões, alta de 20% em valor e de 2% em volume na comparação anual. O
+          melhor trimestre do ano foi o terceiro, entre julho e setembro, com 425
+          operações, das quais 203 associadas a private equity e venture capital —
+          evidência do papel cada vez maior desses fundos no financiamento da
+          consolidação, tanto em varejo quanto em logística.
+        </p>
+
+        <p class="article__conclusion">
+          A combinação entre expansão do e-commerce, digitalização das operações
+          e maior sofisticação financeira consolida a logística e o varejo como
+          dois dos setores mais dinâmicos do mercado brasileiro de fusões e
+          aquisições. Para empresários que buscam crescer via aquisições, ganhar
+          escala ou preparar uma venda estratégica, entender esse movimento de
+          consolidação é essencial — e contar com assessoria especializada faz
+          toda a diferença para transformar oportunidade em resultado.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

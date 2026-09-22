@@ -1,0 +1,154 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "Hospitais e Operadoras de Saúde: a consolidação que acelera o M&A no Brasil";
+const description =
+  "A consolidação hospitalar impulsiona o M&A no setor de saúde no Brasil, com alta nas transações e forte apetite de investidores em 2025, aponta a KPMG.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-08-18",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">Saúde</span>
+        <time datetime="2026-08-18">18 de agosto de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Consolidação hospitalar acelera o M&A no setor de saúde</h2>
+        <p>
+          O mercado brasileiro de fusões e aquisições em saúde vive um novo ciclo de
+          aceleração. De acordo com a Pesquisa de Fusões e Aquisições da KPMG, o
+          segmento de hospitais e laboratórios registrou 22 transações entre janeiro e
+          setembro de 2025, alta de 37% em relação ao mesmo período de 2024. O impulso
+          já era visível no primeiro trimestre do ano, quando o número de operações foi
+          80% superior ao registrado nos três primeiros meses do ano anterior. Segundo a
+          KPMG, cinco das operações concluídas no período contaram com participação de
+          fundos de private equity e venture capital, o que evidencia o apetite do
+          capital financeiro por ativos de saúde no país.
+        </p>
+        <p>
+          Esse movimento de consolidação não é recente: levantamentos do setor apontam
+          mais de 800 operações realizadas entre 2003 e 2023, com centenas de
+          transações nos últimos anos mobilizando cerca de R$ 90 bilhões. Esse
+          histórico consolidou grupos como a Rede D'Or e a Hapvida NotreDame
+          Intermédica — nascida da fusão entre Hapvida e NotreDame Intermédica — como
+          protagonistas de um mercado cada vez mais concentrado, no qual escala
+          operacional, capilaridade geográfica e diversificação de serviços tornaram-se
+          vantagens competitivas decisivas na consolidação hospitalar brasileira.
+        </p>
+
+        <h2>Verticalização, healthtechs e o papel do private equity</h2>
+        <p>
+          Um dos principais vetores da consolidação em saúde no Brasil é a
+          verticalização adotada pelas operadoras de planos de saúde, que passaram a
+          integrar sua rede assistencial por meio da aquisição direta de hospitais,
+          clínicas e laboratórios. A Hapvida NotreDame Intermédica, por exemplo, mantém
+          um plano diretor de investimentos da ordem de R$ 2 bilhões até 2026 para a
+          construção de novos hospitais em sete capitais, somado a clínicas,
+          laboratórios e unidades de pronto atendimento próprias — estratégia que
+          reduz a dependência de prestadores terceirizados e amplia a margem
+          operacional das operadoras.
+        </p>
+        <p>
+          Paralelamente, cresce a atratividade das healthtechs e das clínicas
+          populares, beneficiadas pela digitalização dos serviços de saúde e pela
+          incorporação de inteligência artificial em diagnósticos, telemedicina e
+          gestão assistencial — fatores citados pela própria KPMG entre os
+          propulsores da retomada do M&A no setor de saúde. Do ponto de vista
+          regulatório, a Agência Nacional de Saúde Suplementar (ANS) segue como
+          referência central para operadoras e prestadores, e análises da EY sobre os
+          impactos das fusões e aquisições na saúde suplementar reforçam que a
+          integração entre operadoras, hospitais e tecnologia tende a se aprofundar,
+          ainda que o ritmo de novas fusões possa alternar com ciclos de integração dos
+          ativos já adquiridos.
+        </p>
+        <p>
+          O desempenho da saúde acompanha o comportamento mais amplo do mercado
+          brasileiro de fusões e aquisições. Dados da TTR Data mostram que, até
+          novembro de 2025, o Brasil somava 1.644 transações de M&A, com R$ 256
+          bilhões em capital mobilizado — alta de 5% no número de operações e de 6% no
+          volume financeiro ante 2024. Nesse contexto, a saúde se destaca como um dos
+          setores mais resilientes, sustentado por fundamentos estruturais como o
+          envelhecimento populacional, a expansão da classe média consumidora de
+          planos de saúde e a pressão por eficiência em um sistema historicamente
+          fragmentado entre milhares de operadoras, hospitais e laboratórios
+          independentes.
+        </p>
+
+        <p class="article__conclusion">
+          Para investidores, gestores e empresários do setor, entender essa dinâmica de
+          consolidação hospitalar e M&A em saúde deixou de ser uma opção — é uma
+          condição para competir em um mercado que recompensa escala, integração
+          assistencial e eficiência de capital. A Liberty Negócios acompanha de perto
+          essas tendências para apoiar empresas e investidores na estruturação de
+          operações de fusões e aquisições que capturem o valor estratégico desse
+          momento do setor de saúde brasileiro.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>

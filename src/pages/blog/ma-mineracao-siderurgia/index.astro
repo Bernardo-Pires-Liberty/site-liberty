@@ -1,0 +1,158 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import FinalCta from "../../../components/FinalCta.astro";
+
+const title = "Mineração e Siderurgia: minerais críticos aceleram a consolidação e o M&A no Brasil";
+const description =
+  "Terras raras, nióbio, lítio e cobre impulsionam fusões e aquisições na mineração e siderurgia brasileira, atraindo capital estrangeiro e private equity.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: "2026-09-01",
+  author: { "@type": "Organization", name: "Liberty Negócios" },
+  publisher: { "@type": "Organization", name: "Liberty Negócios" },
+};
+---
+
+<Layout title={title} description={description}>
+  <PageHero title={title} />
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__meta" data-reveal>
+        <span class="article__category">Mineração e Siderurgia</span>
+        <time datetime="2026-09-01">1 de setembro de 2026</time>
+      </div>
+
+      <div class="article__body">
+        <h2>Minerais Críticos Aquecem o M&A na Mineração</h2>
+        <p>
+          O mercado de fusões e aquisições na mineração brasileira voltou a ganhar
+          tração. Segundo pesquisa trimestral da KPMG, o setor registrou 14 operações
+          de M&A no primeiro semestre de 2025, contra nove no mesmo período de 2024,
+          com o primeiro trimestre isolado apresentando alta de 100% na comparação
+          anual (seis negócios ante três). Metade das transações do semestre envolveu
+          compradores ou vendedores estrangeiros, reforçando o apetite internacional
+          por ativos minerais brasileiros.
+        </p>
+        <p>
+          O levantamento da KPMG aponta que terras raras e minerais críticos
+          concentraram o maior volume de negócios do período, movimento impulsionado
+          pela agenda global de descarbonização e pela busca por cadeias de
+          suprimento alternativas. O Brasil reúne argumentos concretos para capturar
+          esse interesse: detém a maior reserva mundial de nióbio e cerca de 23% das
+          reservas mundiais de terras raras, além de posições relevantes em grafita,
+          níquel, manganês, bauxita, cobre e lítio. Não à toa, a Agência Nacional de
+          Mineração registra um recorde de pedidos de exploração — 86% dos 2.727
+          requerimentos protocolados até junho de 2026 foram apresentados a partir de
+          2023, e 42% deles partem de empresas sediadas no exterior, com destaque para
+          grupos da Austrália, dos Estados Unidos e do Canadá.
+        </p>
+        <p>
+          O ambiente regulatório também caminha nessa direção. A sanção da Lei nº
+          15.506/2026, que institui a Política Nacional de Minerais Críticos e
+          Estratégicos, cria um marco mais claro para o desenvolvimento das cadeias
+          produtivas ligadas à transição energética, enquanto o BNDES já analisa
+          dezenas de projetos do setor — 56 propostas, segundo anúncio do banco em
+          maio de 2026, com previsão de aporte de até R$ 50 bilhões em crédito e
+          investimento. A carteira de investimentos do setor mineral projetada para o
+          período de 2026 a 2030 soma US$ 76,9 bilhões, dos quais US$ 21,3 bilhões
+          estão diretamente associados a minerais críticos como cobre, níquel, lítio,
+          grafita, nióbio e zinco — volume que tende a se converter em novas rodadas
+          de consolidação de mineradoras de médio porte e em entrada de fundos
+          estrangeiros via aquisição de participação ou joint ventures.
+        </p>
+
+        <h2>Siderurgia: Pressão Competitiva Reabre o Debate sobre Consolidação</h2>
+        <p>
+          No setor siderúrgico, o driver do momento é geopolítico. Análise da
+          consultoria Alvarez & Marsal aponta que a escalada de tarifas dos Estados
+          Unidos sobre o aço deve acelerar um novo ciclo de fusões e aquisições na
+          siderurgia brasileira — não se trata mais de saber se o movimento vai
+          ocorrer, mas em que ritmo e com que grau de coordenação. O precedente é
+          conhecido: as tarifas de 25% impostas em 2018 provocaram contração das
+          exportações, redirecionamento da produção para o mercado interno,
+          diversificação via M&A local e busca intensa por eficiência operacional.
+          Entre 2018 e 2024, o setor somou 28 transações, totalizando US$ 4,8 bilhões,
+          e a leitura da Alvarez & Marsal é que os anos seguintes podem inaugurar uma
+          segunda onda, agora mais madura, com empresas buscando não apenas ganho de
+          escala, mas também inovação e integração da cadeia de suprimentos.
+        </p>
+        <p>
+          O movimento mais relevante dos últimos anos ilustra essa lógica: em março de
+          2023, a ArcelorMittal concluiu a compra da Companhia Siderúrgica do Pecém
+          (CSP), no Ceará, por US$ 2,2 bilhões, incorporando cerca de 3 milhões de
+          toneladas de capacidade produtiva e elevando sua produção anual a
+          aproximadamente 15,3 milhões de toneladas. A operação reconfigurou o
+          tabuleiro competitivo, pressionando rivais como CSN, Usiminas e Ternium a
+          repensar suas estratégias de posicionamento — um sinal de que, também na
+          siderurgia, escala e integração vertical seguem como racional central por
+          trás das transações.
+        </p>
+
+        <p class="article__conclusion">
+          Entre a corrida global por minerais críticos e a pressão tarifária sobre o
+          aço, mineração e siderurgia despontam como dois dos setores mais dinâmicos
+          do M&A brasileiro nos próximos anos. Para empresas familiares, mineradoras
+          de médio porte e siderúrgicas em busca de capital, parceiros estratégicos ou
+          soluções de sucessão, o momento reforça a importância de uma assessoria
+          especializada, capaz de estruturar operações que capturem valor tanto do
+          lado vendedor quanto do comprador.
+        </p>
+      </div>
+
+      <a href="/blog/" class="btn btn--outline back-link" data-reveal style="--reveal-delay: 0.15s">← Voltar para o Blog</a>
+    </div>
+  </article>
+
+  <FinalCta />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>
+
+<style>
+  .article {
+    max-width: 760px;
+  }
+
+  .article__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .article__category {
+    background: var(--color-bg-light);
+    color: var(--color-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .article__body h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6em;
+  }
+
+  .article__body p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .article__conclusion {
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .back-link {
+    margin-top: 40px;
+  }
+</style>
